@@ -1,4 +1,4 @@
-# Nginx + Node.js + Zookeeper
+# Nginx + Node.js + Docker + Zookeeper
 ### Nginx with 3 Application Servers and 3 Zookeeper Instances
 
 ## How to use
