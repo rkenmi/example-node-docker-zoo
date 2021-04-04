@@ -15,3 +15,10 @@
 3. The application server that receives the request will close the Zookeeper client, terminating the ephemeral zNode that is placed under `/election`
 4. Verify via container output that all of the other Zookeeper instances have gotten the notification. It might look something like: `Got watcher event: NODE_CHILDREN_CHANGED[4]@/election`
 5. You should now see that the number of zNode children under `/election` is fewer than before
+
+### Use Cases for Zookeeper
+#### Leader Election
+- If a host goes down, other hosts can get notified. One of the hosts can then be chosen as the new leader. If the original host comes back up later, the host can re-join the pool and is no longer the leader.
+
+#### Service Discovery
+- If you have a pool of servers and you want to give back to the requester the best server based on geographic distance, or connection type (i.e. Websockets)
